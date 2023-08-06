@@ -3,7 +3,13 @@
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <h1>Blog</h1>
+            <section class="hero">
+                Hero Section | Yagya
+            </section>
+            <section class="services">
+                Services Section | Yagya
+            </section>
+            <section class="home-blog">
                 <div class="container">
                     <div class="blog-items">
                         <?php
@@ -40,6 +46,7 @@
                 <!-- Setting uo the loops to display the posts   -->
 
                 <!-- ----------------------  -->
+            </section>
         </main>
     </div>
 </div>
