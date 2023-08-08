@@ -21,7 +21,21 @@
             <section class="top-bar">
                 <div class="container">
                     <div class="logo">
-                        Logo
+                        <!-- site logo  -->
+                        <?php
+                        if (has_custom_logo()) {
+                            the_custom_logo();
+                        } else {
+                            ?>
+                            <a href="<?php home_url('/') ?>">
+                                <span>
+                                    <!-- bloginfo provides the title of the site  -->
+                                    <?php bloginfo('name') ?>
+                                </span>
+                            </a>
+                            <?php
+                        }
+                        ?>
                     </div>
                     <div class="searchbox">
                         Search
@@ -32,11 +46,11 @@
                 <div class="container">
                     <nav class="main-menu">
                         <button class="check-button">
-                           <div class="menu-icon">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
-                           </div> 
+                            <div class="menu-icon">
+                                <div class="bar1"></div>
+                                <div class="bar2"></div>
+                                <div class="bar3"></div>
+                            </div>
                         </button>
                         <?php wp_nav_menu(
                             array(
