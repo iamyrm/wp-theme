@@ -57,13 +57,68 @@ add_action('after_setup_theme', 'wptheme_config', 0);
 add_action('widgets_init', 'wptheme_sidebars');
 function wptheme_sidebars()
 {
+    // Sidebar for the Blog page 
     register_sidebar(
         array(
             'name' => 'Blog Sidebar',
             'id' => 'sidebar-blog',
             'description' => 'This is the sidebar for Blog. You can add your widgets here.',
-            'before_widget'=>'',
-            'after_widget'=>'',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        )
+    );
+
+    // Sidebar for the single.php page (only made for the practice purpose)
+    register_sidebar(
+        array(
+            'name' => 'Page Sidebar',
+            'id' => 'sidebar-page',
+            'description' => 'This is the sidebar for page. You can add your widgets here.',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        )
+    );
+
+    // Registering Services as a widgets
+    register_sidebar(
+        array(
+            'name' => 'Services 1',
+            'id' => 'services-1',
+            'description' => 'First Service Area',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        )
+    );
+
+    // Registering Services as a widgets
+    register_sidebar(
+        array(
+            'name' => 'Services 2',
+            'id' => 'services-2',
+            'description' => 'Second Service Area',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        )
+    );
+
+    // Registering Services as a widgets
+    register_sidebar(
+        array(
+            'name' => 'Services 3',
+            'id' => 'services-3',
+            'description' => 'Third Service Area',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
         )
     );
 }

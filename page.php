@@ -24,6 +24,8 @@
                     endwhile;
                     ?>
                 </div>
+                <!-- Displaying second sidebar  -->
+                <?php get_sidebar('page'); ?>
             </div>
             <!-- Setting uo the loops to display the posts   -->
 

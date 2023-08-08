@@ -7,41 +7,72 @@
                 Hero Section | Yagya
             </section>
             <section class="services">
-                Services Section | Yagya
-            </section>
-            <section class="home-blog">
+                <h2>Services</h2>
                 <div class="container">
-                    <div class="blog-items">
+                    <div class="services-item">
                         <?php
-                        if (have_posts()):
-                            while (have_posts()):
-                                the_post();
-                                ?>
-                                <article>
-                                    <h2>
-                                        <?php the_title(); ?>
-                                    </h2>
-                                    <div class="meta-info">
-                                        <p>Posted in
-                                            <?php echo get_the_date(); ?> | by
-                                            <?php the_author_posts_link(); ?>
-                                        </p>
-                                        <p>Categories:
-                                            <?php the_category(' '); ?>
-                                        </p>
-                                        <p>
-                                            <?php the_tags('', ', '); ?>
-                                        </p>
-                                    </div>
-                                    <?php the_content(); ?>
-                                </article>
-                                <?php
-                            endwhile;
-                        else: ?>
-                            <p>No any posts to display.</p>
-                        <?php endif;
+                        if (is_active_sidebar('services-1')) {
+                            dynamic_sidebar('services-1');
+                        }
                         ?>
                     </div>
+                    <div class="services-item">
+                        <?php
+                        if (is_active_sidebar('services-2')) {
+                            dynamic_sidebar('services-2');
+                        }
+                        ?>
+                    </div>
+                    <div class="services-item">
+                        <?php
+                        if (is_active_sidebar('services-3')) {
+                            dynamic_sidebar('services-3');
+                        }
+                        ?>
+                    </div>
+                </div>
+            </section>
+            <section class="home-blog">
+                <h2>Latest News</h2>
+                <div class="container">
+                    <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 5,
+                        'category__in' => array(4, 10, 11),
+                        'category__not_in' => array(1),
+                    );
+                    $postlist = new WP_Query($args);
+                    if ($postlist->have_posts()):
+                        while ($postlist->have_posts()):
+                            $postlist->the_post();
+                            ?>
+                            <article class="latest-news">
+                                <!-- Displaying the post thumbnail  -->
+                                <?php the_post_thumbnail('large'); ?>
+                                <h3>
+                                    <?php the_title(); ?>
+                                </h3>
+                                <div class="meta-info">
+                                    <p>
+                                        by <?php the_author_posts_link(); ?>
+                                        Categories:
+                                        <?php the_category(' '); ?>
+                                        <?php the_tags('', ', '); ?>
+                                    </p>
+                                    <p>
+                                    Posted in <?php echo get_the_date(); ?>
+                                    </p>
+                                </div>
+                                <?php the_excerpt(); ?>
+                            </article>
+                            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else: ?>
+                        <p>No any posts to display.</p>
+                    <?php endif;
+                    ?>
                 </div>
                 <!-- Setting uo the loops to display the posts   -->
 

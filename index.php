@@ -43,6 +43,8 @@
                     <?php endif;
                     ?>
                 </div>
+                <!-- Displaying the sidebar  -->
+                <?php get_sidebar(); ?>
             </div>
             <!-- Setting up the loops to display the posts   -->
 
