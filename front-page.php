@@ -74,7 +74,6 @@
                     <?php endif;
                     ?>
                 </div>
-                <!-- Setting uo the loops to display the posts   -->
 
                 <!-- ----------------------  -->
             </section>
