@@ -21,6 +21,10 @@
                             <?php the_content(); ?>
                         </article>
                         <?php
+                        // Checking if comments are allowed or not and then act accordingly 
+                        if (comments_open() || get_comments_number()) {
+                            comments_template();
+                        }
                     endwhile;
                     ?>
                 </div>

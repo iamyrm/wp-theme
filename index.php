@@ -17,10 +17,11 @@
                             ?>
                             <article>
                                 <h2>
-                                    <?php the_title(); ?>
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
                                 <!-- Displaying the post thumbnail  -->
-                                <?php the_post_thumbnail('medium'); ?>
+                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+
                                 <div class="meta-info">
                                     <p>Posted in
                                         <?php echo get_the_date(); ?> | by
@@ -29,11 +30,10 @@
                                     <p>Categories:
                                         <?php the_category(' '); ?>
                                     </p>
-                                    <p>
+                                    <p>Tags:
                                         <?php the_tags('', ', '); ?>
                                     </p>
                                 </div>
-                                <?php the_content(); ?>
                                 <?php the_excerpt(); ?>
                             </article>
                             <?php
