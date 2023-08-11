@@ -1,7 +1,10 @@
 <footer class="site-footer">
     <div class="container">
         <div class="copyright">
-            <p>Copyright &copy Yagyaraj Majhi | All Rights Reserved</p>
+            <p>
+                <!-- Here set_copyright has been called from inc/customizer.php file  -->
+                <?php echo get_theme_mod('set_copyright', 'Copyright © X | All Rights Reserved') ?>
+            </p>
         </div>
         <nav class="footer-menu">
             <?php wp_nav_menu(

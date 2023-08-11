@@ -1,5 +1,8 @@
 <?php
 
+// Importing the customizer.php file 
+require get_template_directory() . '/inc/customizer.php';
+
 // Function for loading/enqueuing the css and the js 
 function wptheme_load_scripts()
 {

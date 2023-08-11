@@ -489,8 +489,8 @@ img {
     border: 1px solid #C6C6C6;
 }
 .searchbox input[type="submit"]{
-    border-radius: 5px;
-    padding: 4px 10px;
+    border-radius: 2px;
+    padding: 10px 10px;
     background: #000000;
     color: #FFFFFF;
     border: none;
