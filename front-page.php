@@ -46,30 +46,10 @@
                     if ($postlist->have_posts()):
                         while ($postlist->have_posts()):
                             $postlist->the_post();
-                            ?>
-                            <article class="latest-news">
-                                <!-- Displaying the post thumbnail  -->
-                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
-                                <h3>
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </h3>
-                                <div class="meta-info">
-                                    <p>
-                                        by
-                                        <?php the_author_posts_link(); ?> |
-                                        Categories:
-                                        <?php the_category(' '); ?> |
-                                        Tags:
-                                        <?php the_tags('', ', '); ?>
-                                    </p>
-                                    <p>
-                                        Posted in
-                                        <?php echo get_the_date(); ?>
-                                    </p>
-                                </div>
-                                <?php the_excerpt(); ?>
-                            </article>
-                            <?php
+
+                            // Getting the template from the parts/content.php, call it as importing the file here to display the contents.
+                            get_template_part('parts/content','front-page');
+
                         endwhile;
                         wp_reset_postdata();
                     else: ?>

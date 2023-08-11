@@ -48,6 +48,14 @@ function wptheme_config()
     );
     add_theme_support('custom-logo', $logoSize);
 
+    // Adding the title tag , shows on the tab of the browser on the top
+    add_theme_support('title-tag');
+
+    // Adding RSS Feed readers---------------------------------
+    add_theme_support('automatic-feed-links');
+
+    // Using HTML5 Markups------------------------------------------ 
+    add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
 }
 
 add_action('after_setup_theme', 'wptheme_config', 0);
@@ -121,4 +129,11 @@ function wptheme_sidebars()
             'after_title' => '</h4>',
         )
     );
+}
+
+if (!function_exists('wp_body_open')) {
+    function wp_body_open()
+    {
+        do_action('wp_body_open');
+    }
 }

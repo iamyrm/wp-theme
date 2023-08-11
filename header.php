@@ -14,8 +14,9 @@
     <?php wp_head(); ?>
 </head>
 
+<!-- It returns the classes of the pages based on the page which we are viewing  -->
 <body <?php body_class(); ?>>
-    <!-- It returns the classes of the pages based on the page which we are viewing  -->
+<?php wp_body_open(); ?>
     <div id="page" class="site">
         <header>
             <section class="top-bar">
@@ -42,23 +43,26 @@
                     </div>
                 </div>
             </section>
-            <section class="menu-area">
-                <div class="container">
-                    <nav class="main-menu">
-                        <button class="check-button">
-                            <div class="menu-icon">
-                                <div class="bar1"></div>
-                                <div class="bar2"></div>
-                                <div class="bar3"></div>
-                            </div>
-                        </button>
-                        <?php wp_nav_menu(
-                            array(
-                                'theme_location' => 'wp_theme_main_menu',
-                                'depth' => 2
-                            )
-                        ); ?>
-                    </nav>
-                </div>
-            </section>
+            <!-- Hiding the menu from the Landing Page slug has been used as a parameter  -->
+            <?php if (!is_page('landing-page')): ?>
+                <section class="menu-area">
+                    <div class="container">
+                        <nav class="main-menu">
+                            <button class="check-button">
+                                <div class="menu-icon">
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
+                                </div>
+                            </button>
+                            <?php wp_nav_menu(
+                                array(
+                                    'theme_location' => 'wp_theme_main_menu',
+                                    'depth' => 2
+                                )
+                            ); ?>
+                        </nav>
+                    </div>
+                </section>
+            <?php endif; ?>
         </header>

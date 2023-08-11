@@ -7,16 +7,19 @@
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <h1>Blog</h1>
+            <!-- Displays the title of the archive -----------------------  -->
+            <?php the_archive_title('<h1 class="archive-title">', '</h1>'); ?>
+            <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+            <!-- ---------------------------------------------------  -->
             <div class="container">
-                <div class="blog-items">
+                <div class="archive-items">
                     <?php
                     if (have_posts()):
                         while (have_posts()):
                             the_post();
-
+                            
                             // Getting the template from the parts/content.php, call it as importing the file here to display the contents.
-                    
+                            
                             get_template_part('parts/content');
 
                         endwhile;
