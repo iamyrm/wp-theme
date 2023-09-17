@@ -6,8 +6,8 @@
  * and the comment form.
  *
  * @package WordPress
- * @subpackage wp-theme
- * @since WP Theme 1.0
+ * @subpackage wp-blog-theme
+ * @since WP Blog Theme 1.0
  */
 
 /*
